@@ -1,8 +1,8 @@
-import React from "react";
+import React, { Component } from "react";
 
 import PokemonList from "../PokemonList";
 
-class PokemonsPage extends React.Component {
+class PokemonsPage extends Component {
   render() {
     return (
       <div>

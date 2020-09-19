@@ -1,8 +1,15 @@
-import React from "react";
+import React, { Component } from "react";
 
-class PokemonDetailsPage extends React.Component {
+import PokemonDetails from "../PokemonDetails";
+
+class PokemonDetailsPage extends Component {
   render() {
-    return;
+    return (
+      <div>
+        <h2 style={{ textAlign: "center" }}>Pokemon Details</h2>
+        <PokemonDetails nameId={this.props.match.params.id}></PokemonDetails>
+      </div>
+    );
   }
 }
 

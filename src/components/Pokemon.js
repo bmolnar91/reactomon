@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Route } from "react-router-dom";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import axios from "axios";
@@ -32,8 +31,7 @@ class Pokemon extends Component {
 
     return (
       <React.Fragment>
-        {/* <Route path={url}></Route> */}
-        <Link to={url}>{name}</Link>
+        <Link to={`/pokemons/${name}`}>{name}</Link>
       </React.Fragment>
     );
   }

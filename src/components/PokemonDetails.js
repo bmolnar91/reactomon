@@ -1,8 +1,12 @@
-import React, { Compontent } from "react";
+import React, { Component } from "react";
 
-class PokemonDetails extends Compontent {
+class PokemonDetails extends Component {
   render() {
-    return;
+    return (
+      <div>
+        <p>Bob {this.props.nameId}</p>
+      </div>
+    );
   }
 }
 
