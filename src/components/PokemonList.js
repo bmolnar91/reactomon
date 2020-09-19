@@ -7,7 +7,7 @@ class PokemonList extends Component {
   render() {
     return this.props.pokemonList.map((pokemon) => (
       <li key={pokemon.name}>
-        <Pokemon name={pokemon.name} />
+        <Pokemon pokemon={pokemon} />
       </li>
     ));
   }
