@@ -6,32 +6,32 @@ import axios from "axios";
 class Pokemon extends Component {
   state = {
     id: null,
-    baseExperience: null,
-    height: null,
-    weight: null,
-    abilities: [],
-    forms: [],
+    // baseExperience: null,
+    // height: null,
+    // weight: null,
+    // abilities: [],
+    // forms: [],
   };
 
   componentDidMount() {
     axios.get(this.props.pokemon.url).then((res) =>
       this.setState({
         id: res.data.id,
-        baseExperience: res.data.base_experience,
-        height: res.data.height,
-        weight: res.data.weight,
-        abilities: res.data.abilities,
-        forms: res.data.forms,
+        // baseExperience: res.data.base_experience,
+        // height: res.data.height,
+        // weight: res.data.weight,
+        // abilities: res.data.abilities,
+        // forms: res.data.forms,
       })
     );
   }
 
   render() {
-    const { name, url } = this.props.pokemon;
+    const { name } = this.props.pokemon;
 
     return (
       <React.Fragment>
-        <Link to={`/pokemons/${name}`}>{name}</Link>
+        <Link to={`/pokemons/${this.state.id}`}>{name}</Link>
       </React.Fragment>
     );
   }

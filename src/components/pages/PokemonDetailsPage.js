@@ -7,7 +7,7 @@ class PokemonDetailsPage extends Component {
     return (
       <div>
         <h2 style={{ textAlign: "center" }}>Pokemon Details</h2>
-        <PokemonDetails nameId={this.props.match.params.id}></PokemonDetails>
+        <PokemonDetails id={this.props.match.params.id}></PokemonDetails>
       </div>
     );
   }
