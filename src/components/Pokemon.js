@@ -1,34 +1,24 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import axios from "axios";
 
-class Pokemon extends Component {
-  state = {
-    id: null,
-  };
+const Pokemon = (props) => {
+  const { name, url } = props.pokemon;
 
-  componentDidMount() {
-    axios.get(this.props.pokemon.url).then((res) =>
-      this.setState({
-        id: res.data.id,
-      })
-    );
-  }
+  const [id, setId] = useState(null);
 
-  render() {
-    const { name } = this.props.pokemon;
+  useEffect(() => {
+    axios.get(url).then((res) => setId(res.data.id));
+  });
 
-    return (
-      <React.Fragment>
-        <Link to={`/pokemons/${this.state.id}`}>{name}</Link>
-      </React.Fragment>
-    );
-  }
-}
-
-Pokemon.propTypes = {
-  pokemon: PropTypes.object.isRequired,
+  return (
+    <React.Fragment>
+      <Link to={`/pokemons/${id}`}>{name}</Link>
+    </React.Fragment>
+  );
 };
+
+Pokemon.propTypes = { pokemon: PropTypes.object.isRequired };
 
 export default Pokemon;
