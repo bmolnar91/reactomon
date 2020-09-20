@@ -1,9 +1,13 @@
-import React, { Component } from "react";
+import React from "react";
+import PropTypes from "prop-types";
 
-class Type extends Component {
-  render() {
-    return <React.Fragment>{this.props.name}</React.Fragment>;
-  }
-}
+const Type = (props) => {
+  return <React.Fragment>{props.name}</React.Fragment>;
+};
+
+Type.propTypes = {
+  name: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
+};
 
 export default Type;

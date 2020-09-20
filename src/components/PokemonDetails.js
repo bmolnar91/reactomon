@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 import axios from "axios";
 
 import capitalize from "../util/stringHelper";
@@ -51,6 +52,10 @@ const PokemonDetails = (props) => {
       </p>
     </div>
   );
+};
+
+PokemonDetails.propTypes = {
+  id: PropTypes.string.isRequired,
 };
 
 export default PokemonDetails;

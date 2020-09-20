@@ -10,18 +10,18 @@ const PokemonsPage = (props) => {
     results: [],
   });
 
-  const [isLoading, setIsLoading] = useState(false);
+  // const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     axios.get("https://pokeapi.co/api/v2/pokemon").then((res) => {
-      setIsLoading(true);
+      // setIsLoading(true);
       setState({
         ...state,
         next: res.data.next,
         previous: res.data.previous,
         results: res.data.results,
       });
-      setIsLoading(false);
+      // setIsLoading(false);
     });
   }, []);
 

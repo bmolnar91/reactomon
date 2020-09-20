@@ -19,6 +19,8 @@ const Pokemon = (props) => {
   );
 };
 
-Pokemon.propTypes = { pokemon: PropTypes.object.isRequired };
+Pokemon.propTypes = {
+  pokemon: PropTypes.object.isRequired,
+};
 
 export default Pokemon;
