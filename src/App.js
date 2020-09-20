@@ -42,7 +42,7 @@ class App extends Component {
               )}
             />
             <Route path="/pokemons/:id" component={PokemonDetailsPage} />
-            <Route path="/types" component={TypesPage} />
+            <Route exact path="/types" component={TypesPage} />
           </Switch>
         </div>
       </Router>

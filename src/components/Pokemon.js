@@ -6,22 +6,12 @@ import axios from "axios";
 class Pokemon extends Component {
   state = {
     id: null,
-    // baseExperience: null,
-    // height: null,
-    // weight: null,
-    // abilities: [],
-    // forms: [],
   };
 
   componentDidMount() {
     axios.get(this.props.pokemon.url).then((res) =>
       this.setState({
         id: res.data.id,
-        // baseExperience: res.data.base_experience,
-        // height: res.data.height,
-        // weight: res.data.weight,
-        // abilities: res.data.abilities,
-        // forms: res.data.forms,
       })
     );
   }
