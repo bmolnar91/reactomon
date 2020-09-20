@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import Navbar from "./components/layout/Navbar";
@@ -9,22 +9,20 @@ import PokemonDetailsPage from "./components/pages/PokemonDetailsPage";
 
 import "./App.css";
 
-class App extends Component {
-  render() {
-    return (
-      <Router>
-        <div className="App">
-          <Navbar />
-          <Switch>
-            <Route exact path="/" component={HomePage} />
-            <Route exact path="/pokemons" component={PokemonsPage} />
-            <Route path="/pokemons/:id" component={PokemonDetailsPage} />
-            <Route exact path="/types" component={TypesPage} />
-          </Switch>
-        </div>
-      </Router>
-    );
-  }
-}
+const App = (props) => {
+  return (
+    <Router>
+      <div className="App">
+        <Navbar />
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route exact path="/pokemons" component={PokemonsPage} />
+          <Route path="/pokemons/:id" component={PokemonDetailsPage} />
+          <Route exact path="/types" component={TypesPage} />
+        </Switch>
+      </div>
+    </Router>
+  );
+};
 
 export default App;
