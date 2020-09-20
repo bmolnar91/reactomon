@@ -5,7 +5,7 @@ import Pokemon from "./Pokemon";
 
 class PokemonList extends Component {
   render() {
-    return this.props.pokemonList.map((pokemon) => (
+    return this.props.pokemons.map((pokemon) => (
       <li key={pokemon.name}>
         <Pokemon pokemon={pokemon} />
       </li>
@@ -14,7 +14,7 @@ class PokemonList extends Component {
 }
 
 PokemonList.propTypes = {
-  pokemonList: PropTypes.array.isRequired,
+  pokemons: PropTypes.array.isRequired,
 };
 
 export default PokemonList;

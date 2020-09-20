@@ -34,7 +34,7 @@ class PokemonDetails extends Component {
 
   render() {
     return (
-      <div style={{ textAlign: "center" }}>
+      <div style={{ textAlign: "left", margin: "15px" }}>
         <img src={this.state.image} alt="" />
         <p>Name: {this.state.name}</p>
         <p>Base experience: {this.state.baseExperience}</p>

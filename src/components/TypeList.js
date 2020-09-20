@@ -4,7 +4,7 @@ import Type from "./Type";
 
 class TypeList extends Component {
   render() {
-    return this.props.typeList.map((type) => {
+    return this.props.types.map((type) => {
       return (
         <li key={type.name}>
           <Type name={type.name} url={type.url} />

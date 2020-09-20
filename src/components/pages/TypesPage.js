@@ -23,9 +23,9 @@ class TypesPage extends Component {
   render() {
     return (
       <div>
-        <h2 style={{ textAlign: "center" }}>Types</h2>
+        <h2 style={{ textAlign: "left", padding: "15px" }}>Types</h2>
         <ol>
-          <TypeList typeList={this.state.results} />
+          <TypeList types={this.state.results} />
         </ol>
       </div>
     );
