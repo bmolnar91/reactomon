@@ -4,17 +4,6 @@ import axios from "axios";
 import capitalize from "../util/stringHelper";
 
 const PokemonDetails = (props) => {
-  // state = {
-  //   id: null,
-  //   name: null,
-  //   baseExperience: null,
-  //   height: null,
-  //   weight: null,
-  //   abilities: [],
-  //   types: [],
-  //   image: {},
-  // };
-
   const [state, setState] = useState({
     id: null,
     name: null,
@@ -25,23 +14,6 @@ const PokemonDetails = (props) => {
     types: [],
     image: {},
   });
-
-  // componentDidMount() {
-  //   axios
-  //     .get(`https://pokeapi.co/api/v2/pokemon/${props.id}`)
-  //     .then((res) =>
-  //       setState({
-  //         id: res.data.id,
-  //         name: capitalize(res.data.name),
-  //         baseExperience: res.data.base_experience,
-  //         height: res.data.height,
-  //         weight: res.data.weight,
-  //         abilities: res.data.abilities,
-  //         types: res.data.types,
-  //         image: res.data.sprites.front_default,
-  //       })
-  //     );
-  // }
 
   useEffect(() => {
     axios.get(`https://pokeapi.co/api/v2/pokemon/${props.id}`).then((res) =>
