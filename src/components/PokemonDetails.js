@@ -1,10 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import axios from "axios";
 
+import { PokemonContext } from "./PokemonContext";
 import capitalize from "../util/stringHelper";
+import { render } from "@testing-library/react";
 
 const PokemonDetails = (props) => {
+  const [caughtPokemons, setCaughtPokemons] = useContext(PokemonContext);
+
   const [state, setState] = useState({
     id: null,
     name: null,
@@ -14,6 +18,7 @@ const PokemonDetails = (props) => {
     abilities: [],
     types: [],
     image: {},
+    caught: null,
   });
 
   useEffect(() => {
@@ -27,9 +32,23 @@ const PokemonDetails = (props) => {
         abilities: res.data.abilities,
         types: res.data.types,
         image: res.data.sprites.front_default,
+        caugth: false,
       })
     );
   }, []);
+
+  const catchPokemon = (e) => {
+    setCaughtPokemons((prevPokemons) => {
+      return prevPokemons.filter((pokemon) => pokemon.id === state.id).length >
+        0
+        ? [...prevPokemons]
+        : [...prevPokemons, { ...state, caugth: true }];
+    });
+  };
+
+  const CatchButton = (props) => {
+    return <button onClick={catchPokemon}>Catch!</button>;
+  };
 
   return (
     <div style={{ textAlign: "left", margin: "15px" }}>
@@ -50,12 +69,9 @@ const PokemonDetails = (props) => {
           return <li key={type.type.name}>{type.type.name}</li>;
         })}
       </p>
+      <CatchButton></CatchButton>
     </div>
   );
-};
-
-PokemonDetails.propTypes = {
-  id: PropTypes.string.isRequired,
 };
 
 export default PokemonDetails;
