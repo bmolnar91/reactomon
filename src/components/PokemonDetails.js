@@ -4,7 +4,6 @@ import axios from "axios";
 
 import { PokemonContext } from "./PokemonContext";
 import capitalize from "../util/stringHelper";
-import { render } from "@testing-library/react";
 
 const PokemonDetails = (props) => {
   const [caughtPokemons, setCaughtPokemons] = useContext(PokemonContext);

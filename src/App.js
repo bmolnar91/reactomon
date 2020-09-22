@@ -8,6 +8,7 @@ import HomePage from "./components/pages/HomePage";
 import PokemonsPage from "./components/pages/PokemonsPage";
 import TypesPage from "./components/pages/TypesPage";
 import PokemonDetailsPage from "./components/pages/PokemonDetailsPage";
+import CaughtPokemonsPage from "./components/pages/CaughtPokemonsPage";
 
 const App = (props) => {
   return (
@@ -21,6 +22,7 @@ const App = (props) => {
               <Route exact path="/pokemons" component={PokemonsPage} />
               <Route path="/pokemons/:id" component={PokemonDetailsPage} />
               <Route exact path="/types" component={TypesPage} />
+              <Route path="/caught-pokemons" component={CaughtPokemonsPage} />
             </Switch>
           </PokemonProvider>
         </div>

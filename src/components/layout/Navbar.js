@@ -9,6 +9,9 @@ function Navbar() {
         Home
       </Link>
       <Link to="/pokemons">Pokemons</Link> | <Link to="/types">Types</Link>
+      <Link to="/caught-pokemons" style={{ float: "right" }}>
+        Caught Pokemons
+      </Link>
     </Header>
   );
 }
