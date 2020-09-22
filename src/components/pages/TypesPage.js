@@ -10,8 +10,10 @@ const TypesPage = (props) => {
     results: [],
   });
 
+  const apiUrl = "https://pokeapi.co/api/v2/type";
+
   useEffect(() => {
-    axios.get("https://pokeapi.co/api/v2/type").then((res) =>
+    axios.get(apiUrl).then((res) =>
       setState({
         next: res.data.next,
         previous: res.data.previous,

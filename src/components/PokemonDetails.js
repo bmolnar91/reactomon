@@ -20,8 +20,10 @@ const PokemonDetails = (props) => {
     caught: null,
   });
 
+  const apiUrl = "https://pokeapi.co/api/v2/pokemon";
+
   useEffect(() => {
-    axios.get(`https://pokeapi.co/api/v2/pokemon/${props.id}`).then((res) =>
+    axios.get(`${apiUrl}/${props.id}`).then((res) =>
       setState({
         id: res.data.id,
         name: capitalize(res.data.name),
@@ -72,5 +74,7 @@ const PokemonDetails = (props) => {
     </div>
   );
 };
+
+PokemonDetails.propTypes = { id: PropTypes.string.isRequired };
 
 export default PokemonDetails;
